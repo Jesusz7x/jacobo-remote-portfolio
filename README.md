@@ -10,6 +10,12 @@ Open `index.html` in a modern browser, or run `python3 -m http.server 8000` from
 
 This repository includes a GitHub Actions workflow. After creating the public repository, select **Settings → Pages → GitHub Actions**. Pushes to `main` deploy the static root.
 
+## Platzi learning
+
+The portfolio lists seven bilingual learning areas, courses reported completed by the student, and related technology areas separately. Course links point to official Platzi catalog pages; they do not verify the student's account or issue a credential. No certificate is claimed as verified. The cybersecurity entry is identified as a Platzi learning path, not an individual course.
+
+Run the lightweight content checks with `python3 -m unittest discover -s tests -v`.
+
 ## Contact and profile fields
 
 The public email supplied by the owner is configured in `data.js`. Identity, education, language levels, availability, GitHub/LinkedIn URLs and CV links remain unset until confirmed. Do not add draft CV PDFs containing placeholders.
