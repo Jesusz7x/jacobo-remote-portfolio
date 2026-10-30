@@ -1,6 +1,6 @@
 # Remote Technology Portfolio
 
-A lightweight bilingual portfolio site built with static HTML, CSS, and JavaScript. It presents project evidence in Python, SQLite, data quality, automation, QA, and web work.
+A lightweight bilingual portfolio site built with static HTML, CSS, and JavaScript. It presents project evidence in Python, SQLite, data quality, automation, QA, and web work. The local portfolio source also documents HEALTHOPS INTELLIGENCE as a tested synthetic-data build; its independent source repository and live browser review remain pending.
 
 ## Run locally
 
@@ -22,7 +22,7 @@ The public email supplied by the owner is configured in `data.js`. The owner-con
 
 ## Evidence and limitations
 
-Project descriptions link to the included local detail pages. Some projects require their separate local source repositories to run; each detail page explains local source paths and relevant tests. A real public repository link and browser/deployment check are pending GitHub account authentication. No screenshots were fabricated.
+Project descriptions link to the included local detail pages, including a transparent HEALTHOPS INTELLIGENCE case study. Its 18 automated tests passed, but the sandbox prevented live socket/browser checks; no hosted demo or source-repository link is claimed. The HealthOps source repo and browser/deployment evidence remain pending. Some projects require their separate local source repositories to run; each detail page explains local source paths and relevant tests. A real public repository link and browser/deployment check are pending GitHub account authentication. No screenshots were fabricated.
 
 ## License
 
@@ -33,5 +33,7 @@ MIT; see `LICENSE`.
 # Portafolio tecnológico remoto
 
 Sitio bilingüe ligero hecho con HTML, CSS y JavaScript estáticos. Para probarlo localmente, abra `index.html` o ejecute `python3 -m http.server 8000`.
+
+El sitio documenta HEALTHOPS INTELLIGENCE como proyecto local con datos ficticios y 18 pruebas aprobadas; el navegador, la demo pública y el repositorio fuente aún están pendientes.
 
 Están configurados el nombre público, los estudios en UES, el usuario GitHub y el correo confirmados por el propietario. Los niveles de idioma, disponibilidad, LinkedIn y descarga del CV siguen pendientes; este entorno no pudo verificar remotamente el enlace de GitHub. El workflow de GitHub Pages está listo; falta autenticar y crear el repositorio. No se usaron capturas ficticias. Licencia MIT.
