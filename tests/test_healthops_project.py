@@ -7,7 +7,15 @@ class HealthOpsPortfolioEntryTests(unittest.TestCase):
         self.assertIn('HealthOps Intelligence',data)
         self.assertIn('projects/healthops-intelligence.html',data)
         self.assertTrue((ROOT/'projects/healthops-intelligence.html').is_file())
-        self.assertIn('PUBLIC READ-ONLY DEMO · 18 TESTS PASSED',data)
+        first=data.split('projects: [',1)[1].split('\n  ],',1)[0].splitlines()[1]
+        self.assertIn('number: "01", name: "HealthOps Intelligence"',first)
+        self.assertIn('tag: "PYTHON · SQLITE · HEALTHCARE OPERATIONS"',first)
+        self.assertIn('A bilingual healthcare operations intelligence demo featuring synthetic records, inventory management, appointment workflows, CSV validation, analytics and role-based read-only access.',first)
+        self.assertIn('Demostración bilingüe de inteligencia operativa sanitaria con datos ficticios, gestión de inventario, citas, validación CSV, análisis y acceso de solo lectura por roles.',first)
+        self.assertIn('href: "projects/healthops-intelligence.html"',first)
+        for existing in ('CSV Data Cleaner','Business Sales Dashboard','Automation Toolkit','Task Management API','Inventory Ledger','Quality Assurance Lab','Job Application Tracker'):
+            self.assertIn(existing,data)
+        self.assertEqual(data.split('projects: [',1)[1].split('\n  ],',1)[0].count('name: "'),8)
     def test_detail_has_bilingual_evidence_and_honest_limitations(self):
         page=(ROOT/'projects/healthops-intelligence.html').read_text()
         self.assertIn('data-lang="en"',page); self.assertIn('data-lang="es"',page)
@@ -17,11 +25,11 @@ class HealthOpsPortfolioEntryTests(unittest.TestCase):
         self.assertIn('sqlite3',page)
         self.assertIn('not a clinical product',page)
         self.assertIn('LIVE DEMO',page); self.assertIn('SOURCE CODE',page)
-        self.assertEqual(page.count('href="https://healthops-intelligence-demo.onrender.com"'),4)
+        self.assertEqual(page.count('href="https://healthops-intelligence-demo.onrender.com/"'),4)
         self.assertEqual(page.count('href="https://github.com/Jesusz7x/healthops-intelligence"'),4)
         public_hrefs=re.findall(r'href="([^"]+)"',page)
         self.assertFalse(any('localhost' in href or '127.0.0.1' in href for href in public_hrefs))
-        for url in ('https://healthops-intelligence-demo.onrender.com','https://github.com/Jesusz7x/healthops-intelligence'):
+        for url in ('https://healthops-intelligence-demo.onrender.com/','https://github.com/Jesusz7x/healthops-intelligence'):
             self.assertRegex(page, re.escape(url)+r'[^>]*target="_blank"[^>]*rel="noopener noreferrer"')
         self.assertIn('healthops-intelligence/blob/main/docs/CASE_STUDY.md',page)
         self.assertIn('healthops-intelligence/blob/main/docs/openapi.yaml',page)
