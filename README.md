@@ -18,7 +18,7 @@ Run the lightweight content checks with `python3 -m unittest discover -s tests -
 
 ## Contact and profile fields
 
-The public email supplied by the owner is configured in `data.js`. Identity, education, language levels, availability, GitHub/LinkedIn URLs and CV links remain unset until confirmed. Do not add draft CV PDFs containing placeholders.
+The public email supplied by the owner is configured in `data.js`. The owner-confirmed public name, UES studies, GitHub username, and contact email are configured. Language levels, availability, LinkedIn, and CV download remain unset pending confirmation; the GitHub account link is user-provided and has not been verified from this network-restricted environment. Do not add draft CV PDFs containing placeholders.
 
 ## Evidence and limitations
 
@@ -34,4 +34,4 @@ MIT; see `LICENSE`.
 
 Sitio bilingüe ligero hecho con HTML, CSS y JavaScript estáticos. Para probarlo localmente, abra `index.html` o ejecute `python3 -m http.server 8000`.
 
-El correo público proporcionado por el propietario está configurado. Nombre, formación, niveles de idioma, disponibilidad, perfiles sociales y CV permanecen sin publicar hasta confirmarse. El workflow de GitHub Pages está listo; falta autenticar y crear el repositorio. No se usaron capturas ficticias. Licencia MIT.
+Están configurados el nombre público, los estudios en UES, el usuario GitHub y el correo confirmados por el propietario. Los niveles de idioma, disponibilidad, LinkedIn y descarga del CV siguen pendientes; este entorno no pudo verificar remotamente el enlace de GitHub. El workflow de GitHub Pages está listo; falta autenticar y crear el repositorio. No se usaron capturas ficticias. Licencia MIT.
