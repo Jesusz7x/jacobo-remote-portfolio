@@ -2,7 +2,7 @@
   const button=document.querySelector('#language');
   if(!button)return;
   const pages={
-    'healthops-intelligence.html':{en:'HealthOps Intelligence · RemoteCareer Lab',es:'HealthOps Intelligence · RemoteCareer Lab',descriptionEn:'HealthOps Intelligence case study: a fictional, local-first operations platform',descriptionEs:'Caso de estudio de HealthOps Intelligence: plataforma ficticia y local de operaciones'},
+    'healthops-intelligence.html':{en:'HealthOps Intelligence · RemoteCareer Lab',es:'HealthOps Intelligence · RemoteCareer Lab',descriptionEn:'HealthOps Intelligence: a fictional operations platform built with Python, SQLite, HTML, CSS and JavaScript',descriptionEs:'HealthOps Intelligence: plataforma ficticia de operaciones hecha con Python, SQLite, HTML, CSS y JavaScript'},
     'data-cleaner.html':{en:'CSV Data Cleaner · RemoteCareer Lab',es:'Limpiador de CSV · RemoteCareer Lab',descriptionEn:'CSV Data Cleaner project notes',descriptionEs:'Notas del proyecto Limpiador de CSV'},
     'job-tracker.html':{en:'Job Tracker · RemoteCareer Lab',es:'Seguimiento de candidaturas · RemoteCareer Lab',descriptionEn:'Local SQLite job application tracker project notes',descriptionEs:'Notas del registro local de candidaturas con SQLite'},
     'additional-work.html':{en:'Project Notes · RemoteCareer Lab',es:'Proyectos · RemoteCareer Lab',descriptionEn:'Documentation for additional RemoteCareer Lab projects',descriptionEs:'Documentación de proyectos adicionales de RemoteCareer Lab'}
