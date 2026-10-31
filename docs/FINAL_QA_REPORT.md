@@ -7,25 +7,33 @@
 - JavaScript syntax: 18 files passed `node --check`.
 - `git diff --check`: passed.
 - HTML parsing, sitemap parsing, route/artwork/documentation coverage, CV file checks and no-placeholder action checks: passed.
-- CV PDFs: both Spanish and English files are one-page A4 PDFs with editable HTML and Markdown sources.
+- Spanish and English CV PDFs: one-page A4; editable HTML and Markdown sources included.
+- GitHub Actions run 41227060141 on commit `2908584`: validation and production deployment succeeded.
 
-## Real browser checks on Vercel Preview
+## Preview browser testing
 
-- Browser: Playwright with Firefox.
-- Portfolio interactions: navigation, language, theme, project category filtering, mobile menu/Escape, clipboard confirmation, reduced-motion setting, case study links and all 11 technical case sections passed.
-- Responsive widths tested: 390, 768, 1366 and 1920 pixels; no horizontal overflow after fixing the HealthOps toolbar wrap.
-- Case studies: 11/11 routes opened, each with eight required sections, a live demo and embedded Preview screenshot. Clicking project art/title navigates to the case study.
-- Demo flows passed: HealthOps tabs/filters/reset; StockPilot and Inventory create, receive, issue, reject overdraw, search and reset; Python Office CSV cleaning/reconciliation/tracker; Business dashboard filters/language/CSV export; CSV Cleaner deduplication/export; Automation Toolkit safe plan; Task API validation/create; Job Tracker create/filter/export; QA Lab six runnable checks; RemoteCareerLab module navigation.
-- Mobile demos: all 11 routes checked at 390px; no horizontal overflow.
-- Console/page errors in the final browser run: zero.
-- Public URLs are opened as browsers and exercised; HTTP status alone was not counted as a demo test.
+Playwright Firefox was used against the public Vercel Preview:
+
+- Portfolio: initial load, navigation, language selector, theme, project category filters, mobile menu and Escape handling, clipboard confirmation, reduced-motion setting, case study links and all 11 case study routes passed.
+- Responsive widths: 390×844, 768×1024, 1366×768 and 1920×1080; no horizontal overflow after correcting the HealthOps mobile toolbar.
+- Case studies: all 11 open, each has eight technical sections, a live demo link and a real embedded browser screenshot. Project artwork/title click through to the case study.
+- Demo workflows passed: HealthOps tabs/filters/reset; StockPilot and Inventory create, receive, issue, overdraw rejection, search and reset; Python Office CSV clean/reconcile/tracker; Business Dashboard filters/language/CSV export; CSV Cleaner deduplication/export; Automation Toolkit safe file plan; Task API validation/create; Job Tracker create/filter/export; QA Lab six executable checks; RemoteCareerLab module navigation.
+- All 11 demos were checked at 390px with no horizontal overflow.
+- Final Preview browser run reported zero console/page errors.
+
+## Production verification
+
+- Playwright Firefox opened the final production home page: title correct, 11 catalog cards present, no desktop overflow; at 390px, `scrollWidth` equaled the 390px viewport.
+- The live StockPilot production demo loaded with its interactive controls.
+- HTTPS returned 200 for all 11 project case pages and all 11 demo routes, the home page, CV PDF, robots.txt and sitemap.xml.
 
 ## Captures
 
-`docs/captures/v3/` contains desktop and mobile portfolio captures, 11 case study captures, desktop and mobile captures for each of the 11 demos, and the architecture diagram capture.
+`docs/captures/v3/` contains desktop and mobile home captures, 11 case study captures, desktop and mobile captures of each demo, and an architecture diagram. Demo and case captures are from the public Vercel Preview; production was separately checked after promotion.
 
-## Limitations and deployment gate
+## Scope and limitations
 
-- Browser demos use fictional client-side data and explicitly identify adaptations where the source project needs a local backend or filesystem. They do not expose source project databases or claim to be the original backend deployment.
-- No Supabase project was created because no public demo needs shared persistence, authentication or server-side storage.
-- Vercel Preview passed. Production and GitHub Actions validation are pending; update this report after the final deployment and public URL checks.
+- Browser demos use fictional client-side state and clearly identify adaptations when a source project depends on a local backend or filesystem. They do not expose source project databases or claim to be a deployment of those backends.
+- HealthOps is a read-only portfolio demo with synthetic data, not certified clinical software.
+- No Supabase project was created because the published site has no shared persistence/authentication/backend requirement.
+- The inherited GitHub Pages workflow was preserved. Vercel is the primary production host.
