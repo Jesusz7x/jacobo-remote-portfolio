@@ -1,7 +1,7 @@
 # Real browser QA report
 
-Date: 2026-10-31  
-Browser: Playwright CLI with Firefox (installed locally)  
+Date: 2026-10-31
+Browser: Playwright CLI with Firefox (installed locally)
 Site: static HTML/CSS/JavaScript served from a temporary local HTTP server
 
 ## Result
