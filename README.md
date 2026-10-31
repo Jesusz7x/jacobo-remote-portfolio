@@ -1,32 +1,27 @@
-# Remote Technology Portfolio
+# Jacobo Castillo Pacheco — Portfolio
 
-A lightweight bilingual portfolio built with static HTML, CSS, and JavaScript. It presents project evidence in Python, SQLite, data quality, automation, QA, and web development.
+A bilingual, responsive portfolio for Jacobo de Jesús Castillo Pacheco, a Systems Engineering student at Universidad de El Salvador (UES). The site uses static HTML, CSS, and JavaScript with no runtime dependencies.
 
 ## Run locally
 
-Open `index.html` in a modern browser, or run `python3 -m http.server 8000` from this folder and visit `http://127.0.0.1:8000`. No Node build or third-party dependency is required.
+Open `index.html` or serve this directory with `python3 -m http.server 8000`. The portfolio is a static root deployment; no Node build is required.
 
-## Featured project: HEALTHOPS INTELLIGENCE
+## Site features
 
-The featured project page links to the public demonstration at <https://healthops-intelligence-demo.onrender.com> and its source repository at <https://github.com/Jesusz7x/healthops-intelligence>. The demo is read-only and contains fictional data; it is not certified clinical software. The project uses Python standard library, SQLite, HTML, CSS, and JavaScript. It does not implement Angular, Express, or PostgreSQL. The portfolio reports 18 automated tests recorded by the project README; live verification of the hosted service depends on network availability.
+- Spanish/English content and persistent light/dark theme.
+- Mobile navigation, keyboard skip link, visible focus, reduced-motion support, and a back-to-top button.
+- Project scope reviewed against available repository documentation. StockPilot and Python Office Tools are local tools; only HealthOps is configured with a demo URL (current uptime not verified). HealthOps uses fictional data, its demo is described as read-only, and it is not certified clinical software.
+- Learning content grouped into seven categories. Courses are student-reported; course catalog links do not verify a personal credential. No certificates, grades, dates, or durations are claimed.
+- Education, academic practice, current availability, and contact details based on information supplied by the owner.
+- SEO metadata, Open Graph image, favicon, `robots.txt`, `sitemap.xml`, and a GitHub Pages `404.html`.
 
-## Publish with GitHub Pages
+## Deploy with GitHub Pages
 
-This repository includes a GitHub Actions workflow. Configure **Settings → Pages → GitHub Actions**. Pushes to `main` deploy the static root.
+The workflow in `.github/workflows/deploy.yml` publishes the repository root on pushes to `main`. Configure **Settings → Pages → GitHub Actions**.
 
-## Platzi learning
+## Checks
 
-The portfolio lists seven bilingual learning areas, courses reported completed by the student, and related technology areas separately. Course links point to official Platzi catalog pages; they do not verify the student's account or issue a credential. No certificate is claimed as verified. The cybersecurity entry is identified as a Platzi learning path, not an individual course.
-
-## Contact and profile fields
-
-The public email supplied by the owner is configured in `data.js`. The owner-confirmed public name, UES studies, GitHub username, and contact email are configured. Language levels, availability, LinkedIn, and CV download remain unset pending confirmation. Do not add draft CV PDFs containing placeholders.
-
-## Evidence and limitations
-
-The HealthOps project page links to its technical documentation and explains its synthetic-data safety scope. This checkout's content tests verify local links, bilingual safety wording, stack claims, and the external demo/source targets. They do not establish remote service uptime or successful GitHub Pages deployment. No screenshots were fabricated. Some projects require their separate source repositories to run.
-
-Run the lightweight content checks with `python3 -m unittest discover -s tests -v`.
+Run the content checks with `python3 -m unittest discover -s tests -v`. The browser validation report and screenshots are in `docs/REAL_BROWSER_REPORT.md` and `docs/captures/`.
 
 ## License
 
@@ -34,14 +29,14 @@ MIT; see `LICENSE`.
 
 ---
 
-# Portafolio tecnológico remoto
+# Portafolio de Jacobo Castillo Pacheco
 
-Sitio bilingüe ligero con HTML, CSS y JavaScript estáticos. Para probarlo localmente, abra `index.html` o ejecute `python3 -m http.server 8000`.
+Sitio bilingüe y adaptable para Jacobo de Jesús Castillo Pacheco, estudiante de Ingeniería de Sistemas en la Universidad de El Salvador (UES). Está construido con HTML, CSS y JavaScript estáticos y no necesita dependencias en tiempo de ejecución.
 
-## Proyecto destacado: HEALTHOPS INTELLIGENCE
+## Ejecución local
 
-La ficha del proyecto enlaza la demostración pública <https://healthops-intelligence-demo.onrender.com> y su código fuente <https://github.com/Jesusz7x/healthops-intelligence>. La demo es de solo lectura y usa datos ficticios; no es software clínico certificado. Implementa biblioteca estándar de Python, SQLite, HTML, CSS y JavaScript. No implementa Angular, Express ni PostgreSQL. Se informan 18 pruebas automatizadas consignadas en el README del proyecto; la comprobación del servicio alojado depende de la conectividad disponible.
+Abre `index.html` o sirve este directorio con `python3 -m http.server 8000`. El sitio no requiere compilación de Node.
 
-Los cursos de Platzi se muestran como formación declarada y las áreas tecnológicas como conocimientos o intereses, sin atribuir certificados no verificados. Nombre, correo, usuario GitHub y estudios en UES se basan en datos confirmados por el propietario. Los CV borrador no se publican.
+Incluye selección de idioma, tema claro/oscuro, navegación móvil, accesibilidad de teclado y movimiento reducido, proyectos con alcances revisados contra la documentación disponible, formación, SEO, Open Graph, favicon, `robots.txt`, `sitemap.xml` y página 404. La ficha de HealthOps explica el uso de datos ficticios y el alcance de solo lectura. La formación de Platzi se presenta como declarada por el estudiante y no como certificación verificada.
 
-Las pruebas de contenido verifican enlaces locales, textos bilingües de seguridad, tecnologías y destinos de la demo/código; no demuestran disponibilidad remota ni que Pages se haya actualizado. Licencia MIT.
+Ejecuta las pruebas de contenido con `python3 -m unittest discover -s tests -v`. El informe de navegador y las capturas están en `docs/REAL_BROWSER_REPORT.md` y `docs/captures/`.

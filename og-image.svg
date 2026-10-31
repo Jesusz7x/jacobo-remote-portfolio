@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Jacobo de Jesús Castillo Pacheco — Systems Engineering student</title>
+  <desc id="description">I build systems that turn complex problems into useful digital solutions. El Salvador. Software, Python, data and web.</desc>
+  <rect width="1200" height="630" fill="#101411"/>
+  <g stroke="#343c32" stroke-width="1" opacity=".46"><path d="M0 90h1200M0 540h1200M70 0v630M1130 0v630"/><path d="M70 160h515M70 190h420"/></g>
+  <rect x="70" y="63" width="54" height="54" rx="2" fill="#c7e28b" transform="rotate(-4 97 90)"/>
+  <text x="97" y="97" text-anchor="middle" fill="#101411" font-family="monospace" font-size="17" font-weight="700">JC</text>
+  <text x="145" y="88" fill="#f2f1e9" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2">JACOBO DE JESÚS CASTILLO PACHECO</text>
+  <text x="70" y="255" fill="#f2f1e9" font-family="Arial, sans-serif" font-size="70" font-weight="600" letter-spacing="-3">I build systems that turn</text>
+  <text x="70" y="345" fill="#e4a078" font-family="Georgia, serif" font-size="68" font-style="italic" letter-spacing="-2">complex problems into</text>
+  <text x="70" y="430" fill="#e4a078" font-family="Georgia, serif" font-size="68" font-style="italic" letter-spacing="-2">useful digital solutions.</text>
+  <circle cx="1000" cy="344" r="107" fill="none" stroke="#c7e28b" stroke-opacity=".55" transform="scale(1 .48) translate(0 365)"/>
+  <circle cx="1000" cy="344" r="143" fill="none" stroke="#e4a078" stroke-opacity=".38" transform="scale(1 .48) translate(0 365) rotate(-34 1000 344)"/>
+  <rect x="825" y="238" width="350" height="190" fill="#171d18" stroke="#c7e28b"/>
+  <text x="853" y="275" fill="#c7e28b" font-family="monospace" font-size="12" letter-spacing="1">SYSTEMS ENGINEERING STUDENT</text>
+  <text x="853" y="325" fill="#f2f1e9" font-family="Georgia, serif" font-size="31">Software · Data · Web</text>
+  <path d="M853 354h293" stroke="#343c32"/>
+  <text x="853" y="386" fill="#a3aa9d" font-family="monospace" font-size="11" letter-spacing="1">EL SALVADOR · AVAILABLE NOW</text>
+  <text x="70" y="584" fill="#a3aa9d" font-family="monospace" font-size="12" letter-spacing="2">PYTHON · SOFTWARE · AUTOMATION · SYSTEMS</text>
+</svg>

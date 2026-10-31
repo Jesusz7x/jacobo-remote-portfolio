@@ -7,15 +7,16 @@ class HealthOpsPortfolioEntryTests(unittest.TestCase):
         self.assertIn('HealthOps Intelligence',data)
         self.assertIn('projects/healthops-intelligence.html',data)
         self.assertTrue((ROOT/'projects/healthops-intelligence.html').is_file())
-        first=data.split('projects: [',1)[1].split('\n  ],',1)[0].splitlines()[1]
-        self.assertIn('number: "01", name: "HealthOps Intelligence"',first)
-        self.assertIn('tag: "PYTHON · SQLITE · HEALTHCARE OPERATIONS"',first)
-        self.assertIn('A bilingual healthcare operations intelligence demo featuring synthetic records, inventory management, appointment workflows, CSV validation, analytics and role-based read-only access.',first)
-        self.assertIn('Demostración bilingüe de inteligencia operativa sanitaria con datos ficticios, gestión de inventario, citas, validación CSV, análisis y acceso de solo lectura por roles.',first)
+        projects=data.split('projects: [',1)[1].split('\n  ],',1)[0]
+        first=projects.split('name: "HealthOps Intelligence"',1)[0][-70:] + 'name: "HealthOps Intelligence"' + projects.split('name: "HealthOps Intelligence"',1)[1].split('\n    },',1)[0]
+        self.assertIn('number: "01"',first)
+        self.assertIn('tag: "PYTHON · SQLITE · OPERATIONS"',first)
+        self.assertIn('bilingual, read-only operations demo',first)
+        self.assertIn('Demo bilingüe de operaciones y solo lectura',first)
         self.assertIn('href: "projects/healthops-intelligence.html"',first)
-        for existing in ('CSV Data Cleaner','Business Sales Dashboard','Automation Toolkit','Task Management API','Inventory Ledger','Quality Assurance Lab','Job Application Tracker'):
-            self.assertIn(existing,data)
-        self.assertEqual(data.split('projects: [',1)[1].split('\n  ],',1)[0].count('name: "'),8)
+        for expected in ('StockPilot','Python Office Tools','REMOTECAREER-LAB','CSV Data Cleaner','projects/additional-work.html'):
+            self.assertIn(expected,data)
+        self.assertEqual(projects.count('name: "'),6)
     def test_detail_has_bilingual_evidence_and_honest_limitations(self):
         page=(ROOT/'projects/healthops-intelligence.html').read_text()
         self.assertIn('data-lang="en"',page); self.assertIn('data-lang="es"',page)

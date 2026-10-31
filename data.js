@@ -1,19 +1,52 @@
-/* Replace only with owner-confirmed facts and real project evidence. */
 window.PORTFOLIO = {
-  profile: { name: "Jacobo de Jesús Castillo Pacheco", email: "jacobodejesuscastillopacheco@gmail.com", github: "https://github.com/Jesusz7x", linkedin: "", cv: "", education: { en: "Systems Engineering student, Universidad de El Salvador (UES)", es: "Estudiante de Ingeniería de Sistemas, Universidad de El Salvador (UES)" }, spanishLevel: "", englishLevel: "", availability: "" },
+  profile: {
+    name: "Jacobo de Jesús Castillo Pacheco",
+    email: "jacobodejesuscastillopacheco@gmail.com",
+    github: "https://github.com/Jesusz7x",
+    availability: { en: "Available immediately", es: "Disponibilidad inmediata" },
+    education: { en: "Systems Engineering student · UES", es: "Estudiante de Ingeniería de Sistemas · UES" }
+  },
   projects: [
-    { number: "01", name: "HealthOps Intelligence", tag: "PYTHON · SQLITE · HEALTHCARE OPERATIONS", description: { en: "A bilingual healthcare operations intelligence demo featuring synthetic records, inventory management, appointment workflows, CSV validation, analytics and role-based read-only access.", es: "Demostración bilingüe de inteligencia operativa sanitaria con datos ficticios, gestión de inventario, citas, validación CSV, análisis y acceso de solo lectura por roles." }, href: "projects/healthops-intelligence.html", status: { en: "PUBLIC READ-ONLY DEMO · SYNTHETIC DATA", es: "DEMO PÚBLICA DE SOLO LECTURA · DATOS FICTICIOS" }, icon: "↗" },
-    { number: "02", name: "CSV Data Cleaner", tag: "PYTHON · DATA QUALITY", description: { en: "A dependency-free CLI that audits CSV quality, trims whitespace, counts missing values, and removes exact duplicates while preserving the source file.", es: "Una herramienta de línea de comandos sin dependencias que revisa la calidad de CSV, elimina espacios sobrantes, cuenta valores vacíos y quita duplicados exactos sin alterar el original." }, href: "projects/data-cleaner.html", status: { en: "WORKING CLI · TESTS INCLUDED", es: "CLI FUNCIONAL · PRUEBAS INCLUIDAS" }, icon: "↗" },
-    { number: "03", name: "Business Sales Dashboard", tag: "JAVASCRIPT · DATA", description: { en: "A bilingual dashboard over synthetic orders, with calculated KPIs, combined filters, sortable rows, product rankings, and filtered CSV export.", es: "Un panel bilingüe de pedidos sintéticos con indicadores calculados, filtros combinados, filas ordenables, ranking de productos y exportación CSV filtrada." }, href: "projects/additional-work.html#business-dashboard", status: { en: "STATIC DEMO · 5 CORE TESTS", es: "DEMOSTRACIÓN ESTÁTICA · 5 PRUEBAS" }, icon: "↗" },
-    { number: "04", name: "Automation Toolkit", tag: "PYTHON · FILE OPERATIONS", description: { en: "Preview-first file organization, duplicate detection, batch renaming, folder reports, structure checks, and flat CSV/JSON conversion.", es: "Organización de archivos con vista previa, detección de duplicados, renombrado masivo, informes, validación de carpetas y conversión simple CSV/JSON." }, href: "projects/additional-work.html#automation-toolkit", status: { en: "LOCAL CLI · CONFIRM BEFORE CHANGES", es: "CLI LOCAL · CONFIRMA ANTES DE CAMBIOS" }, icon: "↗" },
-    { number: "05", name: "Task Management API", tag: "PYTHON · WSGI · SQLITE", description: { en: "A loopback-only JSON API with validated task CRUD, search, filters, pagination, and in-process WSGI tests.", es: "Una API JSON solo local con operaciones CRUD validadas, búsqueda, filtros, paginación y pruebas WSGI en proceso." }, href: "projects/additional-work.html#task-api", status: { en: "LOCAL API · 5 WSGI TESTS", es: "API LOCAL · 5 PRUEBAS WSGI" }, icon: "↗" },
-    { number: "06", name: "Inventory Ledger", tag: "PYTHON · SQLITE", description: { en: "A small inventory ledger with validated receipts/issues, atomic quantity movements, low-stock alerts, and CSV reports.", es: "Un registro de inventario con entradas y salidas validadas, movimientos atómicos, alertas de bajo stock e informes CSV." }, href: "projects/additional-work.html#inventory", status: { en: "LOCAL TOOL · 6 INVENTORY TESTS", es: "HERRAMIENTA LOCAL · 6 PRUEBAS" }, icon: "↗" },
-    { number: "07", name: "Quality Assurance Lab", tag: "QA · TEST DESIGN", description: { en: "A traceable test plan, positive/negative cases, regression evidence, and a resolved-defect log for local tools.", es: "Un plan de pruebas trazable, casos positivos y negativos, evidencia de regresión y registro de defectos corregidos." }, href: "projects/additional-work.html#qa-lab", status: { en: "WORKSPACE EVIDENCE · 57 AUTOMATED TESTS", es: "EVIDENCIA DEL ESPACIO · 57 PRUEBAS AUTOMATIZADAS" }, icon: "↗" },
-    { number: "T", name: "Job Application Tracker", tag: "PYTHON · SQLITE · JOB SEARCH", description: { en: "A local-first tracker for remote openings, application status, follow-ups, and validated CSV interchange.", es: "Un registro local de vacantes remotas, estados, seguimientos e intercambio CSV validado." }, href: "projects/job-tracker.html", status: { en: "LOCAL TOOL · NO AUTO-SUBMISSIONS", es: "HERRAMIENTA LOCAL · SIN ENVÍOS AUTOMÁTICOS" }, icon: "↗" }
+    {
+      number: "01", name: "HealthOps Intelligence", visual: "H/O", tag: "PYTHON · SQLITE · OPERATIONS",
+      description: { en: "A bilingual, read-only operations demo with a metrics dashboard, appointment and inventory workflows, CSV validation, and fictional data. Built as a portfolio project, not certified clinical software.", es: "Demo bilingüe de operaciones y solo lectura, con panel de indicadores, flujos de citas e inventario, validación CSV y datos ficticios. Es un proyecto demostrativo, no software clínico certificado." },
+      status: { en: "PUBLIC DEMO · FICTIONAL DATA", es: "DEMO PÚBLICA · DATOS FICTICIOS" }, href: "projects/healthops-intelligence.html", repo: "https://github.com/Jesusz7x/healthops-intelligence", live: "https://healthops-intelligence-demo.onrender.com/", icon: "01"
+    },
+    {
+      number: "02", name: "StockPilot", visual: "S/P", tag: "PYTHON · SQLITE · INVENTORY",
+      description: { en: "A local-first inventory ledger for a small-business demonstration. It records products, receipts, issues, quantity balances, low-stock alerts, and CSV exports.", es: "Registro de inventario local para una demostración de pequeña empresa. Registra productos, entradas, salidas, existencias, alertas de bajo stock y exportaciones CSV." },
+      status: { en: "LOCAL CLI · SOURCE AVAILABLE", es: "CLI LOCAL · CÓDIGO DISPONIBLE" }, repo: "https://github.com/Jesusz7x/stockpilot", icon: "02"
+    },
+    {
+      number: "03", name: "Python Office Tools", visual: "P/OT", tag: "PYTHON · CSV · AUTOMATION",
+      description: { en: "A collection of local-first utilities for CSV checks, safe file operations, record reconciliation, and job application tracking. Python standard library; synthetic examples.", es: "Utilidades locales para revisar CSV, operar archivos de forma segura, conciliar registros y dar seguimiento a postulaciones. Biblioteca estándar de Python y ejemplos sintéticos." },
+      status: { en: "TOOLS & TESTS IN REPOSITORY", es: "HERRAMIENTAS Y PRUEBAS EN EL REPOSITORIO" }, repo: "https://github.com/Jesusz7x/python-office-tools", icon: "03"
+    },
+    {
+      number: "04", name: "REMOTECAREER-LAB", visual: "R/L", tag: "PYTHON · SQLITE · WEB",
+      description: { en: "A documented workspace of local-first software and web projects, including data-quality, automation, and testing examples. It does not claim job placements or employment outcomes.", es: "Espacio documentado de proyectos locales de software y web, con ejemplos de calidad de datos, automatización y pruebas. No afirma colocaciones ni resultados laborales." },
+      status: { en: "DOCUMENTED PROJECT WORKSPACE", es: "ESPACIO DE PROYECTOS DOCUMENTADO" }, repo: "https://github.com/Jesusz7x/REMOTECAREER-LAB", icon: "04"
+    },
+    {
+      number: "05", name: "CSV Data Cleaner", visual: "CSV", tag: "PYTHON · DATA QUALITY",
+      description: { en: "A dependency-free CLI that audits CSV quality, trims whitespace, counts missing values, and removes exact duplicates while preserving the source file.", es: "CLI sin dependencias que revisa la calidad de CSV, quita espacios sobrantes, cuenta valores faltantes y elimina duplicados exactos sin alterar el original." },
+      status: { en: "WORKING CLI · TESTS INCLUDED", es: "CLI FUNCIONAL · PRUEBAS INCLUIDAS" }, href: "projects/data-cleaner.html", icon: "05"
+    },
+    {
+      number: "06", name: "More project notes", visual: "TOOLS", tag: "AUTOMATION · QA · WEB",
+      description: { en: "Additional small tools and project notes: file automation, a task API, a sales dashboard, QA evidence, and a local job tracker.", es: "Más herramientas y fichas: automatización de archivos, API de tareas, panel de ventas, evidencia de QA y registro local de postulaciones." },
+      status: { en: "LOCAL DEMOS · DETAILS IN NOTES", es: "DEMOS LOCALES · DETALLES EN LA FICHA" }, href: "projects/additional-work.html", icon: "06"
+    }
   ],
   skills: [
-    { key: "demonstrated", items: { en: ["Python CLI development", "CSV processing and validation", "SQLite data models", "REST-style JSON API (WSGI)", "Automated tests (unittest and Node test)", "HTML · CSS · JavaScript dashboard"], es: ["Desarrollo de CLI con Python", "Procesamiento y validación CSV", "Modelos de datos SQLite", "API JSON estilo REST (WSGI)", "Pruebas automatizadas (unittest y Node)", "Panel HTML · CSS · JavaScript"] } },
-    { key: "learning", items: { en: ["SQL reporting and query design", "Advanced spreadsheet workflows", "Browser and assistive-technology QA", "Production deployment and authentication"], es: ["Informes SQL y diseño de consultas", "Flujos avanzados con hojas de cálculo", "QA de navegador y tecnología asistiva", "Despliegue de producción y autenticación"] } }
+    { key: "used", items: { en: ["Python", "SQLite", "HTML · CSS · JavaScript", "Git · GitHub", "CSV validation", "Responsive web projects"], es: ["Python", "SQLite", "HTML · CSS · JavaScript", "Git · GitHub", "Validación CSV", "Proyectos web adaptables"] } },
+    { key: "learning", items: { en: ["SQL and data modeling", "Web interfaces", "Automation", "Linux · Debian", "AI tools and practical applications"], es: ["SQL y modelado de datos", "Interfaces web", "Automatización", "Linux · Debian", "Herramientas de IA y aplicaciones prácticas"] } },
+    { key: "exploration", items: { en: ["Angular · React · Vue · Svelte", "Node.js · Java · C#/.NET · PHP", "MySQL · AWS · Azure · Google Cloud", "Docker · DevOps · software architecture"], es: ["Angular · React · Vue · Svelte", "Node.js · Java · C#/.NET · PHP", "MySQL · AWS · Azure · Google Cloud", "Docker · DevOps · arquitectura de software"] } }
   ],
-  services: { en: ["CSV checks and structured cleanup", "Small Python office automations", "Simple responsive web pages", "Reproducible testing and clear documentation"], es: ["Validación y limpieza estructurada de CSV", "Automatizaciones pequeñas para oficina con Python", "Páginas web sencillas y adaptables", "Pruebas reproducibles y documentación clara"] }
+  education: [
+    { years: "2014 — 2022", title: { en: "Escuela Profesora Concepción Alemán Córdoba", es: "Escuela Profesora Concepción Alemán Córdoba" }, detail: { en: "School education", es: "Educación escolar" } },
+    { years: "2023 — 2025", title: { en: "Instituto Nacional de Usulután", es: "Instituto Nacional de Usulután" }, detail: { en: "Technical high school diploma in Primary Health Care", es: "Bachillerato Técnico en Atención Primaria en Salud" } },
+    { years: "IN PROGRESS", title: { en: "Universidad de El Salvador (UES)", es: "Universidad de El Salvador (UES)" }, detail: { en: "Systems Engineering · Current studies", es: "Ingeniería de Sistemas · Estudios en curso" } }
+  ],
+  interests: { en: ["Software development", "Process automation", "Information systems", "Applied AI", "Data engineering", "Web development", "Linux infrastructure and tools", "Digital solutions for health and operations"], es: ["Desarrollo de software", "Automatización de procesos", "Sistemas de información", "Inteligencia artificial aplicada", "Ingeniería de datos", "Desarrollo web", "Infraestructura y herramientas Linux", "Soluciones digitales para salud y operaciones"] }
 };

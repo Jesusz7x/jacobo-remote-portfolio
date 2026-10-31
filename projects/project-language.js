@@ -2,10 +2,10 @@
   const button=document.querySelector('#language');
   if(!button)return;
   const pages={
-    'healthops-intelligence.html':{en:'HealthOps Intelligence · RemoteCareer Lab',es:'HealthOps Intelligence · RemoteCareer Lab',descriptionEn:'HealthOps Intelligence: a fictional operations platform built with Python, SQLite, HTML, CSS and JavaScript',descriptionEs:'HealthOps Intelligence: plataforma ficticia de operaciones hecha con Python, SQLite, HTML, CSS y JavaScript'},
-    'data-cleaner.html':{en:'CSV Data Cleaner · RemoteCareer Lab',es:'Limpiador de CSV · RemoteCareer Lab',descriptionEn:'CSV Data Cleaner project notes',descriptionEs:'Notas del proyecto Limpiador de CSV'},
-    'job-tracker.html':{en:'Job Tracker · RemoteCareer Lab',es:'Seguimiento de candidaturas · RemoteCareer Lab',descriptionEn:'Local SQLite job application tracker project notes',descriptionEs:'Notas del registro local de candidaturas con SQLite'},
-    'additional-work.html':{en:'Project Notes · RemoteCareer Lab',es:'Proyectos · RemoteCareer Lab',descriptionEn:'Documentation for additional RemoteCareer Lab projects',descriptionEs:'Documentación de proyectos adicionales de RemoteCareer Lab'}
+    'healthops-intelligence.html':{en:'HealthOps Intelligence · Jacobo de Jesús Castillo Pacheco',es:'HealthOps Intelligence · Jacobo de Jesús Castillo Pacheco',descriptionEn:'HealthOps Intelligence: a fictional operations platform built with Python, SQLite, HTML, CSS and JavaScript',descriptionEs:'HealthOps Intelligence: plataforma ficticia de operaciones hecha con Python, SQLite, HTML, CSS y JavaScript'},
+    'data-cleaner.html':{en:'CSV Data Cleaner · Jacobo de Jesús Castillo Pacheco',es:'Limpiador de CSV · Jacobo de Jesús Castillo Pacheco',descriptionEn:'CSV Data Cleaner project notes',descriptionEs:'Notas del proyecto Limpiador de CSV'},
+    'job-tracker.html':{en:'Job Tracker · Jacobo de Jesús Castillo Pacheco',es:'Seguimiento de candidaturas · Jacobo de Jesús Castillo Pacheco',descriptionEn:'Local SQLite job application tracker project notes',descriptionEs:'Notas del registro local de candidaturas con SQLite'},
+    'additional-work.html':{en:'Project Notes · Jacobo de Jesús Castillo Pacheco',es:'Proyectos · Jacobo de Jesús Castillo Pacheco',descriptionEn:'Documentation for additional Jacobo de Jesús Castillo Pacheco projects',descriptionEs:'Documentación de proyectos adicionales de Jacobo de Jesús Castillo Pacheco'}
   };
   const pageKey=location.pathname.split('/').pop();
   const page=pages[pageKey]||pages['additional-work.html'];
