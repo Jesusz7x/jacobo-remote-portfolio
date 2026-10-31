@@ -23,4 +23,4 @@
 
 ## GitHub Pages
 
-The repository’s existing GitHub Pages workflow was preserved. Its job was queued by the push; Vercel Production is the primary deployment and was independently verified above.
+The repository’s existing GitHub Pages workflow was preserved and completed successfully on the final documentation push ([run 41227415838](https://github.com/Jesusz7x/jacobo-remote-portfolio/actions/runs/41227415838)). Vercel Production is the primary host and was independently verified above.
