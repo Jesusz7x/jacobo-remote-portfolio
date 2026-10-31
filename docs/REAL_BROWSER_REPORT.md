@@ -33,7 +33,7 @@ All checks listed below passed. The browser recorded no JavaScript errors, conso
 ## Remote link and deployment limits
 
 - The StockPilot, Python Office Tools, and REMOTECAREER-LAB GitHub pages were reachable during inspection. The supplied HealthOps source URL returned 404 from the web inspection service, and the Render demo host could not be fetched; neither endpoint's public availability was confirmed. Both owner-supplied URLs remain on the project detail page for follow-up.
-- This report covers the local browser run. GitHub Pages deployment and public URL status must be recorded after the push and Actions deployment.
+- The GitHub Pages deployment workflow completed successfully for the pushed commits. At 2026-10-31 16:17 UTC, the public portfolio returned HTTP 200; `og-image.png`, `favicon.svg`, `robots.txt`, `sitemap.xml`, and `404.html` also returned HTTP 200. The verified URL is <https://jesusz7x.github.io/jacobo-remote-portfolio/>.
 
 ## Captures
 
@@ -41,4 +41,4 @@ All checks listed below passed. The browser recorded no JavaScript errors, conso
 - `docs/captures/mobile-390x844.png` — mobile hero at 390×844.
 - `og-image.png` — 1200×630 Open Graph image.
 
-The five portfolio content tests pass with `python3 -m unittest discover -s tests -v`. `node --check` passes for the portfolio scripts. The parent repository's full `scripts/run_checks.py` suite also passed: 53 Python/Node tests plus three JavaScript syntax checks.
+The five portfolio content tests pass with `python3 -m unittest discover -s tests -v`. `node --check` passes for the portfolio scripts. The parent repository's full `scripts/run_checks.py` suite also passed: 53 Python tests and 6 Node tests (59 total), plus three JavaScript syntax checks.
