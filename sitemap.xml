@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://jesusz7x.github.io/jacobo-remote-portfolio/</loc></url>
-  <url><loc>https://jesusz7x.github.io/jacobo-remote-portfolio/projects/healthops-intelligence.html</loc></url>
-  <url><loc>https://jesusz7x.github.io/jacobo-remote-portfolio/projects/data-cleaner.html</loc></url>
-  <url><loc>https://jesusz7x.github.io/jacobo-remote-portfolio/projects/additional-work.html</loc></url>
-  <url><loc>https://jesusz7x.github.io/jacobo-remote-portfolio/projects/job-tracker.html</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/404.html</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/cv/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/cv/jacobo-castillo-en.html</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/cv/jacobo-castillo-es.html</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/projects/healthops-intelligence/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/demo/healthops-intelligence/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/projects/stockpilot/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/demo/stockpilot/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/projects/python-office-tools/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/demo/python-office-tools/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/projects/remote-career-lab/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/demo/remote-career-lab/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/projects/csv-data-cleaner/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/demo/csv-data-cleaner/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/projects/business-sales-dashboard/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/demo/business-sales-dashboard/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/projects/automation-toolkit/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/demo/automation-toolkit/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/projects/task-management-api/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/demo/task-management-api/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/projects/inventory-system/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/demo/inventory-system/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/projects/job-tracker/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/demo/job-tracker/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/projects/qa-lab/</loc></url>
+  <url><loc>https://jacobo-digital-lab.vercel.app/demo/qa-lab/</loc></url>
 </urlset>

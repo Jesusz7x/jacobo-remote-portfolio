@@ -1,42 +1,23 @@
-# Jacobo Castillo Pacheco — Portfolio
+# Jacobo Digital Lab — Portfolio V3
 
-A bilingual, responsive portfolio for Jacobo de Jesús Castillo Pacheco, a Systems Engineering student at Universidad de El Salvador (UES). The site uses static HTML, CSS, and JavaScript with no runtime dependencies.
+Bilingual static portfolio and project demo catalog for Jacobo de Jesús Castillo Pacheco, Systems Engineering student at UES. Built with HTML, CSS and vanilla JavaScript.
 
 ## Run locally
 
-Open `index.html` or serve this directory with `python3 -m http.server 8000`. The portfolio is a static root deployment; no Node build is required.
+`python3 -m http.server 8000` then visit `http://127.0.0.1:8000/`. No app runtime environment variables or shared database are required.
 
-## Site features
+## Project routes
 
-- Spanish/English content and persistent light/dark theme.
-- Mobile navigation, keyboard skip link, visible focus, reduced-motion support, and a back-to-top button.
-- Project scope reviewed against available repository documentation. StockPilot and Python Office Tools are local tools; only HealthOps is configured with a demo URL (current uptime not verified). HealthOps uses fictional data, its demo is described as read-only, and it is not certified clinical software.
-- Learning content grouped into seven categories. Courses are student-reported; course catalog links do not verify a personal credential. No certificates, grades, dates, or durations are claimed.
-- Education, academic practice, current availability, and contact details based on information supplied by the owner.
-- SEO metadata, Open Graph image, favicon, `robots.txt`, `sitemap.xml`, and a GitHub Pages `404.html`.
+Each card opens a technical case study at `/projects/<slug>/` and an interactive browser demo at `/demo/<slug>/`. The demos use fictional local data. CLI and API ports are labeled as browser adaptations; the original Task API remains local-only. See `docs/PROJECT_CATALOG.md`, `docs/PROJECT_DEMOS.md`, and `docs/ARCHITECTURE.md`.
 
-## Deploy with GitHub Pages
+## Deploy
 
-The workflow in `.github/workflows/deploy.yml` publishes the repository root on pushes to `main`. Configure **Settings → Pages → GitHub Actions**.
+Static root project for Vercel; Preview on PR and Production on `main` through `.github/workflows/vercel.yml`. GitHub Pages remains a mirror workflow. No Supabase database is configured because current demos need no shared persistence. See `docs/VERCEL_SETUP.md` and `docs/SUPABASE_SETUP.md`.
 
-## Checks
+## Quality
 
-Run the content checks with `python3 -m unittest discover -s tests -v`. The browser validation report and screenshots are in `docs/REAL_BROWSER_REPORT.md` and `docs/captures/`.
+Portfolio/unit/browser results and deployment URLs are recorded in `docs/FINAL_QA_REPORT.md` and `docs/DEPLOYMENT_REPORT.md`. Screenshots: `docs/captures/v3/`. Do not infer demo functionality from HTTP 200 alone.
 
-## License
+## CV
 
-MIT; see `LICENSE`.
-
----
-
-# Portafolio de Jacobo Castillo Pacheco
-
-Sitio bilingüe y adaptable para Jacobo de Jesús Castillo Pacheco, estudiante de Ingeniería de Sistemas en la Universidad de El Salvador (UES). Está construido con HTML, CSS y JavaScript estáticos y no necesita dependencias en tiempo de ejecución.
-
-## Ejecución local
-
-Abre `index.html` o sirve este directorio con `python3 -m http.server 8000`. El sitio no requiere compilación de Node.
-
-Incluye selección de idioma, tema claro/oscuro, navegación móvil, accesibilidad de teclado y movimiento reducido, proyectos con alcances revisados contra la documentación disponible, formación, SEO, Open Graph, favicon, `robots.txt`, `sitemap.xml` y página 404. La ficha de HealthOps explica el uso de datos ficticios y el alcance de solo lectura. La formación de Platzi se presenta como declarada por el estudiante y no como certificación verificada.
-
-Ejecuta las pruebas de contenido con `python3 -m unittest discover -s tests -v`. El informe de navegador y las capturas están en `docs/REAL_BROWSER_REPORT.md` y `docs/captures/`.
+Editable HTML/Markdown and downloadable PDF versions in `cv/`, in English and Spanish.

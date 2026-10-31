@@ -1,0 +1,19 @@
+# Project catalog / Catálogo de proyectos
+
+Inventory checked against repository source, tests, and existing documentation on 2026-10-31. A browser adaptation is identified separately from a source CLI or API; all demo datasets are synthetic.
+
+| Project | Source | Verified implementation | Public demo model | Status |
+|---|---|---|---|---|
+| HealthOps Intelligence | `projects/07-healthops-intelligence` | Python stdlib HTTP API, SQLite, HTML/CSS/JS; dashboard, appointments, staffing, inventory, CSV validation, data-quality and audit views. Read-only flag required for remote bind. | Static browser dashboard with synthetic fixtures; no public API / no clinical certification. | Demo implemented; external Render availability not verified. |
+| StockPilot | `repositories/stockpilot` | Python stdlib + SQLite CLI; product/SKU records, edits, receipts/issues with transaction and ledger, low-stock/search and CSV export. | Browser adaptation with fictional rows, ledger and reset. | Demo implemented; CLI remains local. |
+| Python Office Tools | `repositories/python-office-tools` | Python stdlib CSV cleaner, reconciliation, safe filesystem preview/apply CLI, duplicate hashing and local job tracker. | Browser CSV clean/reconcile/job tracker; no upload backend; file operations preview-only. | Demo implemented. |
+| REMOTECAREER-LAB | `repositories/REMOTECAREER-LAB` | Offline monorepo; six modules below plus tests/docs. | Static module index linking each independent demo. | Demo index implemented; source branch has four local commits ahead and was not changed/pushed. |
+| CSV Data Cleaner | REMOTECAREER-LAB `projects/01-data-cleaner` and Python Office Tools | Python CLI trims values, reports missing fields and removes exact duplicate rows without replacing source. | Browser file input, preview and downloadable clean copy/report. | Demo implemented. |
+| Business Sales Dashboard | REMOTECAREER-LAB `projects/02-business-dashboard` | Original static dashboard; 24 deterministic synthetic orders, filters, KPIs, sort, monthly bars, CSV export; six Node tests. | Original dashboard served as a static app. | Demo implemented and source tests pass. |
+| Automation Toolkit | REMOTECAREER-LAB and Python Office Tools | Local file organization, regex rename preview, duplicate SHA-256 reporting, inventory CSV, folder validation and CSV/JSON conversion. | Browser metadata preview and downloadable operation plan; no file moves, rename, hash or deletion. | Demo implemented; constrained to browser permissions. |
+| Task Management API | REMOTECAREER-LAB `projects/04-task-management-api` | Local WSGI/SQLite CRUD, validation, search, status filters and pagination; docs explicitly prohibit public exposure without auth/TLS. | In-memory browser contract sandbox, not an HTTP API. | Demo implemented; original API remains local-only. |
+| Inventory System | REMOTECAREER-LAB `projects/05-inventory-system` | Python/SQLite transactional product movements, audit history, low-stock filters, CSV export. | Browser adaptation with synthetic inventory and reset. | Demo implemented. |
+| Job Application Tracker | Python Office Tools and REMOTECAREER-LAB | Local Python/SQLite and CSV tracker. | Fictional browser records, statuses and CSV export. | Demo implemented; no accounts or sync. |
+| Quality Assurance Lab | REMOTECAREER-LAB `projects/06-quality-assurance-lab` | Test plan, cases, defect log and report; Python unittest and Node dashboard tests. | Browser checks call actual Business Sales Dashboard core functions. | Demo implemented; full suite remains a separate CI check. |
+
+The portfolio catalog intentionally omits claims of employment outcomes, customer data, production API availability, credentials, and clinical certification. Each listed project now has its own Vercel route. Status is tracked against Preview and production verification in docs/DEPLOYMENT_REPORT.md; no external Render uptime is implied.

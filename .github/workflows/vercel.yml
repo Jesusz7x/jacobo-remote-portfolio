@@ -1,0 +1,64 @@
+name: Vercel static portfolio
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vercel-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Python portfolio checks
+        run: python -m unittest discover -s tests -v
+      - name: Dashboard core tests
+        run: node demo/business-sales-dashboard/dashboard.test.js
+      - name: JavaScript syntax checks
+        run: |
+          for file in app.js data.js learning.js projects/case.js demo/*/app.js demo/business-sales-dashboard/*.js; do
+            node --check "$file"
+          done
+
+  deploy:
+    needs: validate
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Vercel CLI
+        run: npm install --global vercel@65.9.0
+      - name: Pull Vercel project settings
+        run: vercel pull --yes --environment=${{ github.event_name == 'push' && 'production' || 'preview' }} --token="$VERCEL_TOKEN"
+      - name: Build production assets
+        if: github.event_name == 'push'
+        run: vercel build --prod --token="$VERCEL_TOKEN"
+      - name: Build preview assets
+        if: github.event_name != 'push'
+        run: vercel build --token="$VERCEL_TOKEN"
+      - name: Deploy production
+        if: github.event_name == 'push'
+        run: vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN"
+      - name: Deploy preview
+        if: github.event_name != 'push'
+        run: vercel deploy --prebuilt --token="$VERCEL_TOKEN"

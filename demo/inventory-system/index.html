@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1ea">
+  <meta name="description" content="Interactive browser adaptation of the REMOTECAREER-LAB Inventory System using fictional data.">
+  <title>Inventory System · Inventory ledger demo</title>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main" data-en="Skip to content" data-es="Saltar al contenido">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="../../index.html" aria-label="Jacobo Digital Lab home"><span class="brand-mark">SP</span><span>INVENTORY SYSTEM <small>REMOTECAREER-LAB / WEB ADAPTATION</small></span></a>
+    <nav aria-label="Demo controls" data-label-en="Demo controls" data-label-es="Controles de la demo"><a href="../../projects/inventory-system/" data-en="Case study" data-es="Ficha técnica">Case study</a><button id="lang" type="button" aria-label="Switch language">ES</button><button id="reset" type="button" class="quiet" data-en="Reset demo" data-es="Restablecer demo">Reset demo</button></nav>
+  </header>
+  <main id="main">
+    <section class="intro">
+      <p class="eyebrow" data-en="BROWSER ADAPTATION · FICTIONAL DATA" data-es="ADAPTACIÓN EN NAVEGADOR · DATOS FICTICIOS">BROWSER ADAPTATION · FICTIONAL DATA</p>
+      <h1 data-en="A clearer view of every movement." data-es="Una vista más clara de cada movimiento.">A clearer view of every movement.</h1>
+      <p class="lead" data-en="Explore a small inventory ledger: register items, adjust details, receive or issue stock, and inspect the before-and-after record. Your changes stay in this browser and can be reset." data-es="Explora un registro de inventario: añade productos, ajusta sus detalles, registra entradas o salidas y revisa cada balance anterior y posterior. Tus cambios permanecen en este navegador y puedes restablecerlos.">Explore a small inventory ledger: register items, adjust details, receive or issue stock, and inspect the before-and-after record. Your changes stay in this browser and can be reset.</p>
+      <p class="scope" data-en="This is a browser adaptation of the local Python + SQLite Inventory System CLI in REMOTECAREER-LAB. It is separate from its local database and is not a shared or production inventory service." data-es="Esta es una adaptación en navegador de la CLI local hecha con Python y SQLite. No es la CLI original, una base compartida ni un servicio de inventario de producción.">This is a browser adaptation of the local Python + SQLite Inventory System CLI in REMOTECAREER-LAB. It is separate from its local database and is not a shared or production inventory service.</p>
+    </section>
+
+    <section class="metrics" aria-label="Inventory summary" data-label-en="Inventory summary" data-label-es="Resumen del inventario">
+      <article><span data-en="Active products" data-es="Productos activos">Active products</span><strong id="metric-products">0</strong></article>
+      <article><span data-en="Units on hand" data-es="Unidades disponibles">Units on hand</span><strong id="metric-units">0</strong></article>
+      <article><span data-en="Low-stock alerts" data-es="Alertas de pocas existencias">Low-stock alerts</span><strong id="metric-low">0</strong></article>
+      <article><span data-en="Recorded movements" data-es="Movimientos registrados">Recorded movements</span><strong id="metric-moves">0</strong></article>
+    </section>
+
+    <div class="workspace">
+      <section class="panel catalog" aria-labelledby="catalog-title">
+        <div class="panel-head"><div><p class="eyebrow">01 / CATALOG</p><h2 id="catalog-title" data-en="Products" data-es="Productos">Products</h2></div><button class="primary" id="add-toggle" type="button" data-en="Add product +" data-es="Añadir producto +">Add product +</button></div>
+        <form id="add-form" class="form-grid" hidden>
+          <label><span>SKU</span><input name="sku" required maxlength="32" autocomplete="off" placeholder="OFF-004"></label>
+          <label><span data-en="Product name" data-es="Nombre">Product name</span><input name="name" required maxlength="80" placeholder="Desk organizer"></label>
+          <label><span data-en="Category" data-es="Categoría">Category</span><input name="category" maxlength="48" placeholder="Office"></label>
+          <label><span data-en="Unit" data-es="Unidad">Unit</span><input name="unit" required maxlength="24" value="unit"></label>
+          <label><span data-en="Low-stock threshold" data-es="Umbral de pocas existencias">Low-stock threshold</span><input name="low_stock" type="number" required min="0" step="1" value="0"></label>
+          <div class="form-actions"><button class="primary" type="submit" data-en="Save product" data-es="Guardar producto">Save product</button><button class="quiet" id="cancel-add" type="button" data-en="Cancel" data-es="Cancelar">Cancel</button></div>
+        </form>
+        <div class="filters"><label class="search"><span class="sr-only" data-en="Search by SKU, name, or category" data-es="Buscar por SKU, nombre o categoría">Search by SKU, name, or category</span><input id="search" type="search" placeholder="Search by SKU, name, or category" data-placeholder-en="Search by SKU, name, or category" data-placeholder-es="Buscar por SKU, nombre o categoría"></label><label class="check"><input id="low-only" type="checkbox"><span data-en="Low stock only" data-es="Solo pocas existencias">Low stock only</span></label><button id="export-products" class="quiet" type="button" data-en="Export products CSV" data-es="Exportar productos CSV">Export products CSV</button></div>
+        <div class="table-wrap"><table><thead><tr><th scope="col">SKU</th><th scope="col" data-en="Product" data-es="Producto">Product</th><th scope="col" data-en="Category" data-es="Categoría">Category</th><th scope="col" data-en="On hand" data-es="Disponible">On hand</th><th scope="col" data-en="Alert at" data-es="Alerta en">Alert at</th><th scope="col"><span class="sr-only" data-en="Actions" data-es="Acciones">Actions</span></th></tr></thead><tbody id="products"></tbody></table></div>
+        <p id="empty-products" class="empty" hidden data-en="No products match these filters. Clear the search or add a fictional item." data-es="Ningún producto coincide con estos filtros. Borra la búsqueda o añade un producto ficticio.">No products match these filters. Clear the search or add a fictional item.</p>
+      </section>
+
+      <aside class="side-stack">
+        <section class="panel movement" aria-labelledby="move-title">
+          <div class="panel-head"><div><p class="eyebrow">02 / STOCK FLOW</p><h2 id="move-title" data-en="Record a movement" data-es="Registrar movimiento">Record a movement</h2></div></div>
+          <form id="move-form" class="stack-form">
+            <label><span data-en="Product" data-es="Producto">Product</span><select name="product" id="move-product" required></select></label>
+            <div class="split"><label><span data-en="Movement" data-es="Movimiento">Movement</span><select name="kind"><option value="receive" data-en="Receive" data-es="Entrada">Receive</option><option value="issue" data-en="Issue" data-es="Salida">Issue</option></select></label><label><span data-en="Quantity" data-es="Cantidad">Quantity</span><input name="quantity" type="number" min="1" step="1" required value="1"></label></div>
+            <label><span data-en="Reference · optional" data-es="Referencia · opcional">Reference · optional</span><input name="reference" maxlength="64" placeholder="PO-104"></label>
+            <label><span data-en="Note · optional" data-es="Nota · opcional">Note · optional</span><input name="note" maxlength="120" placeholder="Restock"></label>
+            <button class="primary wide" type="submit" data-en="Record movement" data-es="Guardar movimiento">Record movement</button>
+          </form>
+          <p id="notice" role="status" aria-live="polite" class="notice"></p>
+        </section>
+        <section class="panel ledger" aria-labelledby="ledger-title">
+          <div class="panel-head"><div><p class="eyebrow">03 / AUDIT TRAIL</p><h2 id="ledger-title" data-en="Movement ledger" data-es="Registro de movimientos">Movement ledger</h2></div><button id="export-movements" type="button" class="quiet" data-en="Export CSV" data-es="Exportar CSV">Export CSV</button></div>
+          <label class="ledger-filter"><span data-en="Show movements for" data-es="Ver movimientos de">Show movements for</span><select id="ledger-product"></select></label>
+          <ol id="ledger-rows" class="ledger-list"></ol><p id="empty-ledger" class="empty" hidden data-en="No movements yet. Record a receive or issue to start the audit trail." data-es="Aún no hay movimientos. Registra una entrada o salida para iniciar el historial.">No movements yet. Record a receive or issue to start the audit trail.</p>
+        </section>
+      </aside>
+    </div>
+    <footer><span>INVENTORY SYSTEM / FICTIONAL WORKSPACE</span><a href="../../index.html" data-en="Back to portfolio ↑" data-es="Volver al portafolio ↑">Back to portfolio ↑</a></footer>
+  </main>
+  <dialog id="edit-dialog" aria-labelledby="edit-title"><form id="edit-form" method="dialog"><div class="panel-head"><div><p class="eyebrow">PRODUCT DETAILS</p><h2 id="edit-title" data-en="Edit product" data-es="Editar producto">Edit product</h2></div><button type="button" id="close-edit" class="icon-button" aria-label="Close">×</button></div><p id="edit-sku" class="sku-lock"></p><input type="hidden" name="id"><label><span data-en="Name" data-es="Nombre">Name</span><input name="name" required maxlength="80"></label><label><span data-en="Category" data-es="Categoría">Category</span><input name="category" maxlength="48"></label><label><span data-en="Unit" data-es="Unidad">Unit</span><input name="unit" required maxlength="24"></label><label><span data-en="Low-stock threshold" data-es="Umbral de pocas existencias">Low-stock threshold</span><input name="low_stock" type="number" min="0" step="1" required></label><div class="form-actions"><button class="primary" type="submit" data-en="Save changes" data-es="Guardar cambios">Save changes</button><button type="button" id="cancel-edit" class="quiet" data-en="Cancel" data-es="Cancelar">Cancel</button></div></form></dialog>
+</body>
+</html>

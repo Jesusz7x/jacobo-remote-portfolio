@@ -2,3 +2,11 @@
 Thumbs.db
 __pycache__/
 *.py[cod]
+node_modules/
+.playwright-cli/
+.vercel/*
+!.vercel/project.json
+.env
+.env.*
+.env*
+!.env.example
